@@ -1,10 +1,8 @@
-
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
-
 
 body {
   font-family: Arial, sans-serif;
@@ -13,7 +11,6 @@ body {
   color: #333;
   padding: 0 1rem;
 }
-
 
 header {
   background-color: #e0e0e0;
@@ -33,14 +30,12 @@ header p {
   margin: 0 auto;
 }
 
-
 main {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
   margin-bottom: 2rem;
 }
-
 
 figure {
   background-color: #fff;
@@ -69,7 +64,6 @@ figcaption {
   background-color: #f9f9f9;
 }
 
-
 footer {
   text-align: center;
   padding: 1.5rem 0;
@@ -77,4 +71,65 @@ footer {
   font-size: 0.9rem;
   color: #555;
   border-top: 1px solid #ccc;
+}
+
+
+@media (min-width: 772px) {
+  main {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  figure img {
+    border-radius: 50%;
+  }
+
+  figure:last-child {
+    grid-column: span 2;
+  }
+}
+
+
+@media (min-width: 992px) {
+  main {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  figure img {
+    border-radius: 0;
+  }
+
+  figure:nth-child(3n) {
+    grid-column: span 2;
+  }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #111;
+    color: #eee;
+  }
+
+  header, footer {
+    background-color: #222;
+    color: #ccc;
+  }
+
+  figure {
+    background-color: #1a1a1a;
+    border-color: #333;
+  }
+
+  figcaption {
+    background-color: #2a2a2a;
+    color: #ddd;
+  }
 }
