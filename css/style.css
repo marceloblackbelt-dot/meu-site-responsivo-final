@@ -1,98 +1,80 @@
-body {
-  font-family: Arial, sans-serif;
+
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  background-color: #f4f4f4;
-  color: #333;
-  text-align: center;
-  line-height: 1.5;
 }
 
-header, footer {
-  background-color: #ddd;
-  padding: 20px;
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f3f3f3;
+  color: #333;
+  padding: 0 1rem;
 }
+
+
+header {
+  background-color: #e0e0e0;
+  padding: 2rem 1rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+header h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+header p {
+  font-size: 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
 
 main {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 10px;
-  padding: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
 }
 
+
 figure {
-  margin: 0;
-  padding: 10px;
-  border: 2px solid #666;
   background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+figure:hover {
+  transform: scale(1.02);
 }
 
 figure img {
   width: 100%;
-  height: auto;
+  height: 200px;
+  object-fit: cover;
   display: block;
-  margin: 0 auto;
 }
 
 figcaption {
-  margin-top: 10px;
+  text-align: center;
+  padding: 0.75rem;
   font-weight: bold;
+  background-color: #f9f9f9;
 }
 
 
-@media screen and (min-width: 772px) {
-  main {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  figure {
-    border-radius: 50%;
-    overflow: hidden;
-  }
-
-  figure:last-child {
-    grid-column: span 2;
-  }
-}
-
-
-@media screen and (min-width: 992px) {
-  figure {
-    border-radius: 0;
-  }
-
-  figure:nth-child(3n) {
-    grid-column: span 2;
-  }
-}
-
-
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
-  * {
-    animation: none !important;
-    transition: none !important;
-  }
-}
-
-
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: #111;
-    color: #f7e56c;
-  }
-
-  header, footer {
-    background-color: #222;
-    color: #f7e56c;
-  }
-
-  figure {
-    background-color: #222;
-    color: #f7e56c;
-    border: 2px solid #000;
-  }
+footer {
+  text-align: center;
+  padding: 1.5rem 0;
+  background-color: #e0e0e0;
+  font-size: 0.9rem;
+  color: #555;
+  border-top: 1px solid #ccc;
 }
